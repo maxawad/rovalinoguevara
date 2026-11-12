@@ -1,16 +1,48 @@
-# React + Vite
+# Rovalino Guevara: Family, Faith and Community
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fundraising and community website for the Rovalino Guevara family. It tells the story of their charity work and lets visitors learn about the projects, read family recipes and find out how to support them.
 
-Currently, two official plugins are available:
+## What it does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Home**: introduces the family and links to the three projects.
+- **Food Bank**: explains the food bank and donation work.
+- **Church Project**: shows the phases of a planned church in Alicante, Spain, and shows a wallet address visitors can copy to donate in USDC on the Base network.
+- **Recipes**: a browsable book of family recipes with ingredients and steps.
+- **Sponsor**: sponsorship tiers with a call to action and a contact email.
 
-## React Compiler
+All content is written directly in the page components. There is no backend, database or API key.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- React 19 with React Router
+- Vite
+- Tailwind CSS 4
+- lucide-react icons
+- Google Fonts (Inter and Playfair Display), loaded from the web
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run it
+
+You need Node.js 20 or newer.
+
+```bash
+npm install
+npm run dev      # development server with hot reload
+npm run lint     # optional code check
+```
+
+## Build a static site
+
+```bash
+npm run build    # writes the site to dist/
+npm run preview  # serve the built site locally
+```
+
+The output in `dist/` is plain static files and needs no secrets, so it can be hosted on any static host. Because the site uses client side routes, the host must send unknown paths to `index.html`. The file `public/_redirects` already does this for Cloudflare Pages and Netlify.
+
+## Status
+
+Working. It is a finished front end with placeholder content in places: the "Sponsor Now" and donate buttons currently link to the gofundme.com home page rather than a real campaign page, and the donation wallet address and contact email should be confirmed before the site is promoted.
+
+## Credits
+
+Built from the Vite React template. The family, project descriptions and recipes belong to the Rovalino Guevara family.
